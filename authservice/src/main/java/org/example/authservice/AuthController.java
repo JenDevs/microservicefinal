@@ -1,6 +1,5 @@
 package org.example.authservice;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -36,7 +35,8 @@ public class AuthController {
 
             Instant now = Instant.now();
             JwtClaimsSet claims = JwtClaimsSet.builder()
-                    .issuer("self")
+                    //.issuer("self")
+                    .issuer("http://authservice:9000")
                     .issuedAt(now)
                     .expiresAt(now.plus(Duration.ofSeconds(600)))
                     .subject(request.getUsername())

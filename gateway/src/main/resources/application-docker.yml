@@ -1,0 +1,37 @@
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  application:
+    name: gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: authservice
+          uri: http://authservice:9000
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - RewritePath=/api/auth/(?<segment>.*), /auth/${segment}
+
+        - id: jokeservice
+          uri: http://jokeservice:8081
+          predicates:
+            - Path=/api/jokes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+
+        - id: quoteservice
+          uri: http://quoteservice:8082
+          predicates:
+            - Path=/api/quotes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://authservice:9000

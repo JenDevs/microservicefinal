@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  application:
+    name: jokeservice
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # jwk-set-uri: http://authservice:9000/oauth2/jwks
+          issuer-uri: http://authservice:9000
+
+server:
+  port: 8081

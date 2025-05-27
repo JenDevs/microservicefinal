@@ -1,12 +1,12 @@
-package org.example.gateway;
+package org.example.jokeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GatewayApplication {
+public class JokeserviceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
+        SpringApplication.run(JokeserviceApplication.class, args);
     }
 }

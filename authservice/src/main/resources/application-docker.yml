@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  application:
+    name: authservice
+
+server:
+  port: 9000
+
+auth:
+  issuer-uri: http://authservice:9000

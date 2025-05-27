@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  application:
+    name: quoteservice
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://authservice:9000
+          # jwk-set-uri: http://authservice:9000/oauth2/jwks
+
+server:
+  port: 8082
