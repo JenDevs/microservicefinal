@@ -1,6 +1,6 @@
 <pre>
-To start the system, you must first build Docker images for each service. Open a terminal and run the following 
-commands from each service’s root directory (where pom.xml is located):
+To start the system, you must first build Docker images for each service. Open a terminal and run the 
+following commands from each service’s root directory (where pom.xml is located):
 
 Build Authorization Server
 mvn spring-boot:build-image "-Dspring-boot.build-image.imageName=authservice:0.0.1-SNAPSHOT"
