@@ -36,10 +36,10 @@ Content-Type: application/json
 
 2. Copy the returned access token and use it in the Authorization header to access protected endpoints:
 GET http://localhost:8080/api/jokes/random
-Authorization: Bearer your.jwt.token.here
+Authorization Bearer paste-your-token-here
 
 GET http://localhost:8080/api/quotes/random
-Authorization: Bearer your.jwt.token.here
+Authorization Bearer paste-your-token-here
 
 If you try to access these endpoints without a token, the response will be:
 401 Unauthorized
