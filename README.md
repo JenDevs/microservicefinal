@@ -1,18 +1,18 @@
 <pre>
+Build Docker Images:
 To build all service images at once, run the provided PowerShell script from the project root:
 .\build-images.ps1
 
-
+  
+Start the Services
 After all images are built, go to the project root where docker-compose.yml is located and run:
 docker-compose up --build
 
 This will start all four services and connect them together.
 
 
-
 To test the system:
-
-1. Send a POST request to the login endpoint via the API Gateway:
+Send a POST request to the login endpoint via the API Gateway:
 POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
@@ -21,7 +21,7 @@ Content-Type: application/json
   "password": "password"
 }
 
-2. Copy the returned access token and use it in the Authorization header to access protected endpoints:
+Copy the returned access token and use it in the Authorization header to access protected endpoints:
 GET http://localhost:8080/api/jokes/random
 Authorization Bearer paste-your-token-here
 
