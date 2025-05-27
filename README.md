@@ -1,19 +1,6 @@
 <pre>
-To start the system, you must first build Docker images for each service. Open a terminal and run the 
-following commands from each service’s root directory (where pom.xml is located):
-
-Build Authorization Server
-mvn spring-boot:build-image "-Dspring-boot.build-image.imageName=authservice:0.0.1-SNAPSHOT"
-
-Build API Gateway
-mvn spring-boot:build-image "-Dspring-boot.build-image.imageName=gateway:0.0.1-SNAPSHOT"
-
-Build Joke Service
-mvn spring-boot:build-image "-Dspring-boot.build-image.imageName=jokeservice:0.0.1-SNAPSHOT"
-
-Build Quote Service
-mvn spring-boot:build-image "-Dspring-boot.build-image.imageName=quoteservice:0.0.1-SNAPSHOT"
-
+To build all service images at once, run the provided PowerShell script from the project root:
+.\build-images.ps1
 
 
 After all images are built, go to the project root where docker-compose.yml is located and run:
